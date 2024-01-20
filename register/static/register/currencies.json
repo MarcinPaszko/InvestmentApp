@@ -1,0 +1,564 @@
+{
+  "currencies": [
+    {
+      "country": "Albania Lek",
+      "currency_code": "ALL",
+      "symbol": "Lek"
+    },
+    {
+      "country": "Afghanistan Afghani",
+      "currency_code": "AFN",
+      "symbol": "؋"
+    },
+    {
+      "country": "Argentina Peso",
+      "currency_code": "ARS",
+      "symbol": "$"
+    },
+    {
+      "country": "Aruba Guilder",
+      "currency_code": "AWG",
+      "symbol": "ƒ"
+    },
+    {
+      "country": "Australia Dollar",
+      "currency_code": "AUD",
+      "symbol": "$"
+    },
+    {
+      "country": "Azerbaijan Manat",
+      "currency_code": "AZN",
+      "symbol": "₼"
+    },
+    {
+      "country": "Bahamas Dollar",
+      "currency_code": "BSD",
+      "symbol": "$"
+    },
+    {
+      "country": "Barbados Dollar",
+      "currency_code": "BBD",
+      "symbol": "$"
+    },
+    {
+      "country": "Belarus Ruble",
+      "currency_code": "BYN",
+      "symbol": "Br"
+    },
+    {
+      "country": "Belize Dollar",
+      "currency_code": "BZD",
+      "symbol": "BZ$"
+    },
+    {
+      "country": "Bermuda Dollar",
+      "currency_code": "BMD",
+      "symbol": "$"
+    },
+    {
+      "country": "Bolivia Bolíviano",
+      "currency_code": "BOB",
+      "symbol": "$b"
+    },
+    {
+      "country": "Bosnia and Herzegovina Convertible Mark",
+      "currency_code": "BAM",
+      "symbol": "KM"
+    },
+    {
+      "country": "Botswana Pula",
+      "currency_code": "BWP",
+      "symbol": "P"
+    },
+    {
+      "country": "Bulgaria Lev",
+      "currency_code": "BGN",
+      "symbol": "лв"
+    },
+    {
+      "country": "Brazil Real",
+      "currency_code": "BRL",
+      "symbol": "R$"
+    },
+    {
+      "country": "Brunei Darussalam Dollar",
+      "currency_code": "BND",
+      "symbol": "$"
+    },
+    {
+      "country": "Cambodia Riel",
+      "currency_code": "KHR",
+      "symbol": "៛"
+    },
+    {
+      "country": "Canada Dollar",
+      "currency_code": "CAD",
+      "symbol": "$"
+    },
+    {
+      "country": "Cayman Islands Dollar",
+      "currency_code": "KYD",
+      "symbol": "$"
+    },
+    {
+      "country": "Chile Peso",
+      "currency_code": "CLP",
+      "symbol": "$"
+    },
+    {
+      "country": "China Yuan Renminbi",
+      "currency_code": "CNY",
+      "symbol": "¥"
+    },
+    {
+      "country": "Colombia Peso",
+      "currency_code": "COP",
+      "symbol": "$"
+    },
+    {
+      "country": "Costa Rica Colon",
+      "currency_code": "CRC",
+      "symbol": "₡"
+    },
+    {
+      "country": "Croatia Kuna",
+      "currency_code": "HRK",
+      "symbol": "kn"
+    },
+    {
+      "country": "Cuba Peso",
+      "currency_code": "CUP",
+      "symbol": "₱"
+    },
+    {
+      "country": "Czech Republic Koruna",
+      "currency_code": "CZK",
+      "symbol": "Kč"
+    },
+    {
+      "country": "Denmark Krone",
+      "currency_code": "DKK",
+      "symbol": "kr"
+    },
+    {
+      "country": "Dominican Republic Peso",
+      "currency_code": "DOP",
+      "symbol": "RD$"
+    },
+    {
+      "country": "East Caribbean Dollar",
+      "currency_code": "XCD",
+      "symbol": "$"
+    },
+    {
+      "country": "Egypt Pound",
+      "currency_code": "EGP",
+      "symbol": "£"
+    },
+    {
+      "country": "El Salvador Colon",
+      "currency_code": "SVC",
+      "symbol": "$"
+    },
+    {
+      "country": "Euro Member Countries",
+      "currency_code": "EUR",
+      "symbol": "€"
+    },
+    {
+      "country": "Falkland Islands (Malvinas) Pound",
+      "currency_code": "FKP",
+      "symbol": "£"
+    },
+    {
+      "country": "Fiji Dollar",
+      "currency_code": "FJD",
+      "symbol": "$"
+    },
+    {
+      "country": "Ghana Cedi",
+      "currency_code": "GHS",
+      "symbol": "¢"
+    },
+    {
+      "country": "Gibraltar Pound",
+      "currency_code": "GIP",
+      "symbol": "£"
+    },
+    {
+      "country": "Guatemala Quetzal",
+      "currency_code": "GTQ",
+      "symbol": "Q"
+    },
+    {
+      "country": "Guernsey Pound",
+      "currency_code": "GGP",
+      "symbol": "£"
+    },
+    {
+      "country": "Guyana Dollar",
+      "currency_code": "GYD",
+      "symbol": "$"
+    },
+    {
+      "country": "Honduras Lempira",
+      "currency_code": "HNL",
+      "symbol": "L"
+    },
+    {
+      "country": "Hong Kong Dollar",
+      "currency_code": "HKD",
+      "symbol": "$"
+    },
+    {
+      "country": "Hungary Forint",
+      "currency_code": "HUF",
+      "symbol": "Ft"
+    },
+    {
+      "country": "Iceland Krona",
+      "currency_code": "ISK",
+      "symbol": "kr"
+    },
+    {
+      "country": "India Rupee",
+      "currency_code": "INR",
+      "symbol": "₹"
+    },
+    {
+      "country": "Indonesia Rupiah",
+      "currency_code": "IDR",
+      "symbol": "Rp"
+    },
+    {
+      "country": "Iran Rial",
+      "currency_code": "IRR",
+      "symbol": "﷼"
+    },
+    {
+      "country": "Isle of Man Pound",
+      "currency_code": "IMP",
+      "symbol": "£"
+    },
+    {
+      "country": "Israel Shekel",
+      "currency_code": "ILS",
+      "symbol": "₪"
+    },
+    {
+      "country": "Jamaica Dollar",
+      "currency_code": "JMD",
+      "symbol": "J$"
+    },
+    {
+      "country": "Japan Yen",
+      "currency_code": "JPY",
+      "symbol": "¥"
+    },
+    {
+      "country": "Jersey Pound",
+      "currency_code": "JEP",
+      "symbol": "£"
+    },
+    {
+      "country": "Kazakhstan Tenge",
+      "currency_code": "KZT",
+      "symbol": "лв"
+    },
+    {
+      "country": "Korea (North) Won",
+      "currency_code": "KPW",
+      "symbol": "₩"
+    },
+    {
+      "country": "Korea (South) Won",
+      "currency_code": "KRW",
+      "symbol": "₩"
+    },
+    {
+      "country": "Kyrgyzstan Som",
+      "currency_code": "KGS",
+      "symbol": "лв"
+    },
+    {
+      "country": "Laos Kip",
+      "currency_code": "LAK",
+      "symbol": "₭"
+    },
+    {
+      "country": "Lebanon Pound",
+      "currency_code": "LBP",
+      "symbol": "£"
+    },
+    {
+      "country": "Liberia Dollar",
+      "currency_code": "LRD",
+      "symbol": "$"
+    },
+    {
+      "country": "Macedonia Denar",
+      "currency_code": "MKD",
+      "symbol": "ден"
+    },
+    {
+      "country": "Malaysia Ringgit",
+      "currency_code": "MYR",
+      "symbol": "RM"
+    },
+    {
+      "country": "Mauritius Rupee",
+      "currency_code": "MUR",
+      "symbol": "₨"
+    },
+    {
+      "country": "Mexico Peso",
+      "currency_code": "MXN",
+      "symbol": "$"
+    },
+    {
+      "country": "Mongolia Tughrik",
+      "currency_code": "MNT",
+      "symbol": "₮"
+    },
+    {
+      "country": "Moroccan-dirham",
+      "currency_code": "MNT",
+      "symbol": "د.إ"
+    },
+    {
+      "country": "Mozambique Metical",
+      "currency_code": "MZN",
+      "symbol": "MT"
+    },
+    {
+      "country": "Namibia Dollar",
+      "currency_code": "NAD",
+      "symbol": "$"
+    },
+    {
+      "country": "Nepal Rupee",
+      "currency_code": "NPR",
+      "symbol": "₨"
+    },
+    {
+      "country": "Netherlands Antilles Guilder",
+      "currency_code": "ANG",
+      "symbol": "ƒ"
+    },
+    {
+      "country": "New Zealand Dollar",
+      "currency_code": "NZD",
+      "symbol": "$"
+    },
+    {
+      "country": "Nicaragua Cordoba",
+      "currency_code": "NIO",
+      "symbol": "C$"
+    },
+    {
+      "country": "Nigeria Naira",
+      "currency_code": "NGN",
+      "symbol": "₦"
+    },
+    {
+      "country": "Norway Krone",
+      "currency_code": "NOK",
+      "symbol": "kr"
+    },
+    {
+      "country": "Oman Rial",
+      "currency_code": "OMR",
+      "symbol": "﷼"
+    },
+    {
+      "country": "Pakistan Rupee",
+      "currency_code": "PKR",
+      "symbol": "₨"
+    },
+    {
+      "country": "Panama Balboa",
+      "currency_code": "PAB",
+      "symbol": "B/."
+    },
+    {
+      "country": "Paraguay Guarani",
+      "currency_code": "PYG",
+      "symbol": "Gs"
+    },
+    {
+      "country": "Peru Sol",
+      "currency_code": "PEN",
+      "symbol": "S/."
+    },
+    {
+      "country": "Philippines Peso",
+      "currency_code": "PHP",
+      "symbol": "₱"
+    },
+    {
+      "country": "Poland Zloty",
+      "currency_code": "PLN",
+      "symbol": "zł"
+    },
+    {
+      "country": "Qatar Riyal",
+      "currency_code": "QAR",
+      "symbol": "﷼"
+    },
+    {
+      "country": "Romania Leu",
+      "currency_code": "RON",
+      "symbol": "lei"
+    },
+    {
+      "country": "Russia Ruble",
+      "currency_code": "RUB",
+      "symbol": "₽"
+    },
+    {
+      "country": "Saint Helena Pound",
+      "currency_code": "SHP",
+      "symbol": "£"
+    },
+    {
+      "country": "Saudi Arabia Riyal",
+      "currency_code": "SAR",
+      "symbol": "﷼"
+    },
+    {
+      "country": "Serbia Dinar",
+      "currency_code": "RSD",
+      "symbol": "Дин."
+    },
+    {
+      "country": "Seychelles Rupee",
+      "currency_code": "SCR",
+      "symbol": "₨"
+    },
+    {
+      "country": "Singapore Dollar",
+      "currency_code": "SGD",
+      "symbol": "$"
+    },
+    {
+      "country": "Solomon Islands Dollar",
+      "currency_code": "SBD",
+      "symbol": "$"
+    },
+    {
+      "country": "Somalia Shilling",
+      "currency_code": "SOS",
+      "symbol": "S"
+    },
+    {
+      "country": "South Korean Won",
+      "currency_code": "KRW",
+      "symbol": "₩"
+    },
+    {
+      "country": "South Africa Rand",
+      "currency_code": "ZAR",
+      "symbol": "R"
+    },
+    {
+      "country": "Sri Lanka Rupee",
+      "currency_code": "LKR",
+      "symbol": "₨"
+    },
+    {
+      "country": "Sweden Krona",
+      "currency_code": "SEK",
+      "symbol": "kr"
+    },
+    {
+      "country": "Switzerland Franc",
+      "currency_code": "CHF",
+      "symbol": "CHF"
+    },
+    {
+      "country": "Suriname Dollar",
+      "currency_code": "SRD",
+      "symbol": "$"
+    },
+    {
+      "country": "Syria Pound",
+      "currency_code": "SYP",
+      "symbol": "£"
+    },
+    {
+      "country": "Taiwan New Dollar",
+      "currency_code": "TWD",
+      "symbol": "NT$"
+    },
+    {
+      "country": "Thailand Baht",
+      "currency_code": "THB",
+      "symbol": "฿"
+    },
+    {
+      "country": "Trinidad and Tobago Dollar",
+      "currency_code": "TTD",
+      "symbol": "TT$"
+    },
+    {
+      "country": "Turkey",
+      "currency_code": "TRY",
+      "symbol": "₺"
+    },
+    {
+      "country": "Tuvalu",
+      "currency_code": "TVD",
+      "symbol": "$"
+    },
+    {
+      "country": "Ukraine",
+      "currency_code": "UAH",
+      "symbol": "₴"
+    },
+    {
+      "country": "UAE-Dirham",
+      "currency_code": "AED",
+      "symbol": "د.إ"
+    },
+    {
+      "country": "United Kingdom",
+      "currency_code": "GBP",
+      "symbol": "£"
+    },
+    {
+      "country": "United States",
+      "currency_code": "USD",
+      "symbol": "$"
+    },
+    {
+      "country": "Uruguay",
+      "currency_code": "UYU",
+      "symbol": "$U"
+    },
+    {
+      "country": "Uzbekistan",
+      "currency_code": "UZS",
+      "symbol": "лв"
+    },
+    {
+      "country": "Venezuela",
+      "currency_code": "VEF",
+      "symbol": "Bs"
+    },
+    {
+      "country": "Viet Nam",
+      "currency_code": "VND",
+      "symbol": "₫"
+    },
+    {
+      "country": "Yemen",
+      "currency_code": "YER",
+      "symbol": "﷼"
+    },
+    {
+      "country": "Zimbabwe",
+      "currency_code": "ZWD",
+      "symbol": "Z$"
+    }
+  ]
+}
