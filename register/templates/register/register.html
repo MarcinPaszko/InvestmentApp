@@ -1,0 +1,101 @@
+{% load static %}
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="{% static 'portfolio/images/favicon.png' %}">
+  <title>Register</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    body {
+      background-color: #0d0d0d; /* Adjust color as needed */
+      color: #fff;
+    }
+
+    #top-bar {
+      background-color: #000000;
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: Arial, sans-serif; /* Change the font family as desired */
+      position: fixed;
+      top: 100px; /* Adjust top to leave space for the banner */
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    #top-bar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px; /* Change the font size as desired */
+    }
+    footer {
+      background-color: #000000;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      font-family: Arial, sans-serif; /* Change the font family as desired */
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+</style>
+<body>
+  <header>
+    <img src="{% static 'portfolio/images/banner.png' %}" alt="Banner" style="width: 2800px; max-width: 100%; height: auto;">
+  </header>
+
+  <!-- Top bar with links -->
+  <div id="top-bar">
+    <div>
+      <a href="{% url 'post_list' %}">Home</a>
+      <a href="{% url 'database' %}">Database</a>
+      <a href="{% url 'register:login' %}">Login</a>
+      <a href="{% url 'register:register' %}">Register</a>
+      <a href="{% url 'register:stock_add' %}">Stock Add</a>
+      <a href="{% url 'register:exchangerates' %}">Exchange Rates</a>
+      <a href="{% url 'register:profile' %}">Profile</a>
+      <a href="{% url 'register:display_data' %}">Arrays</a>
+      <a href="{% url 'register:stock_graph' %}">Graph</a>
+      <!-- Add more links as needed -->
+    </div>
+    <div id="user-info">
+      {% if user.is_authenticated %}
+        Logged as <a href="{% url 'register:profile' %}">{{ user.username }}</a> | <a href="{% url 'logout' %}">Logout</a>
+      {% else %}
+        <div class="not-logged">Not Logged</div>
+      {% endif %}
+    </div>
+  </div>
+  <br></br>
+  <br></br>
+   <br></br>
+   <br></br>
+   <br></br>
+  <!-- Register form -->
+  <h2>Register</h2>
+  <form method="post" action="{% url 'register:register' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+  </form>
+
+ <footer id="bottom-bar">
+    <p>Copyright &copy; Investment Manager Portfolio 2024</p>
+  </footer>
+</body>
+</html>

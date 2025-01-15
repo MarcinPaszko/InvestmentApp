@@ -1,0 +1,144 @@
+<!-- Your HTML form and table structure -->
+<form id="stockAddForm">
+    <label for="asset">Asset:</label>
+    <select id="asset" name="asset" required>
+        {% for asset in assets_list %}
+            <option value="{{ asset.symbol }}">{{ asset.name }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="numShares">Number of Shares:</label>
+    <input type="number" id="numShares" name="num_shares" required>
+
+    <label for="purchasePrice">Purchase Price:</label>
+    <input type="number" id="purchasePrice" name="purchase_price" required>
+
+    <label for="currencyCode">Currency Code:</label>
+    <input type="text" id="currencyCode" name="currency_code" maxlength="3" required>
+
+    <label for="tradeDate">Trade Date:</label>
+    <input type="text" id="tradeDate" name="trade_date" placeholder="dd-mm-yyyy" required>
+
+    <button type="button" onclick="addStock()">Add Stock</button>
+</form>
+
+<!-- Display values for debugging -->
+<div id="debugValues"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Asset</th>
+            <th>Number of Shares</th>
+            <th>Purchase Price</th>
+            <th>Currency Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for stock in stock_ownership_list %}
+            <tr>
+                <td>{{ stock.asset }}</td>
+                <td>{{ stock.num_shares }}</td>
+                <td>{{ stock.purchase_price }}</td>
+                <td>{{ stock.currency_code }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- Your HTML form and table structure -->
+
+<script>
+    function getCookie(name) {
+        const cookieMatch = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return cookieMatch ? cookieMatch[2] : null;
+    }
+
+    function addStock() {
+        const form = document.getElementById('stockAddForm');
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        const asset = document.getElementById('asset').value;
+        const numShares = parseInt(document.getElementById('numShares').value, 10);
+        const purchasePrice = parseFloat(document.getElementById('purchasePrice').value);
+        const currencyCode = document.getElementById('currencyCode').value.toUpperCase(); // Get and format the currency code
+        const tradeDate = document.getElementById('tradeDate').value;
+
+        if (!asset || typeof asset !== 'string' || !currencyCode || typeof currencyCode !== 'string') {
+            console.error('Invalid asset or currency code value');
+            return;
+        }
+
+        // Format the date before sending it to the server
+        const formattedTradeDate = tradeDate.split('-').reverse().join('-');
+
+        const formData = {
+            asset: asset,
+            num_shares: numShares,
+            purchase_price: purchasePrice,
+            currency_code: currencyCode, // Include currency code in formData
+            trade_date: formattedTradeDate,
+        };
+
+        console.log('formData:', formData);
+
+        fetch('/register/stock_add/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify(formData),
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+
+                // Update the table and clear the form on success
+                updateTable(data.assets_list, data.stock_ownership_list);
+                clearForm();
+            })
+            .catch(error => {
+                console.error('Error:', error.message);
+                // Display the error message in a debug area on your page
+                document.getElementById('debugValues').innerText = `Server Response: ${error.message}`;
+            });
+    }
+
+    function updateTable(assetsList, stockOwnershipList) {
+        // Clear existing table rows
+        const tbody = document.querySelector('table tbody');
+        tbody.innerHTML = '';
+
+        // Add new rows based on the received data
+        stockOwnershipList.forEach(stock => {
+            const row = tbody.insertRow();
+            const assetCell = row.insertCell(0);
+            const numSharesCell = row.insertCell(1);
+            const purchasePriceCell = row.insertCell(2);
+            const currencyCodeCell = row.insertCell(3);
+
+            assetCell.textContent = stock.asset;
+            numSharesCell.textContent = stock.num_shares;
+            purchasePriceCell.textContent = stock.purchase_price;
+            currencyCodeCell.textContent = stock.currency_code;
+        });
+    }
+
+    function clearForm() {
+        // Clear the form inputs
+        document.getElementById('asset').value = '';
+        document.getElementById('numShares').value = '';
+        document.getElementById('purchasePrice').value = '';
+        document.getElementById('currencyCode').value = ''; // Clear Currency Code
+        document.getElementById('tradeDate').value = '';
+    }
+</script>

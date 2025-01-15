@@ -1,0 +1,202 @@
+[
+  {
+    "symbol": "AAPL",
+    "name": "Apple Inc."
+  },
+  {
+    "symbol": "MSFT",
+    "name": "Microsoft Corporation"
+  },
+  {
+    "symbol": "AAME",
+    "name": "Amazon.com Inc."
+  },
+  {
+    "symbol": "GOOGL",
+    "name": "Atlantic American Corp"
+  },
+  {
+    "symbol": "TSLA",
+    "name": "Tesla Inc."
+  },
+  {
+    "symbol": "META",
+    "name": "Meta Platforms Inc"
+  },
+  {
+    "symbol": "V",
+    "name": "Visa Inc."
+  },
+  {
+    "symbol": "JPM",
+    "name": "JPMorgan Chase & Co."
+  },
+  {
+    "symbol": "JNJ",
+    "name": "Johnson & Johnson"
+  },
+  {
+    "symbol": "NVDA",
+    "name": "NVIDIA Corporation"
+  },
+  {
+    "symbol": "PYPL",
+    "name": "PayPal Holdings, Inc."
+  },
+  {
+    "symbol": "DIS",
+    "name": "Walt Disney Co (The)"
+  },
+  {
+    "symbol": "BABA",
+    "name": "Alibaba Group Holding Ltd"
+  },
+  {
+    "symbol": "PFE",
+    "name": "Pfizer Inc"
+  },
+  {
+    "symbol": "INTC",
+    "name": "Intel Corp"
+  },
+  {
+    "symbol": "CSCO",
+    "name": "Cisco Systems Inc."
+  },
+  {
+    "symbol": "VZ",
+    "name": "Verizon Communications Inc"
+  },
+  {
+    "symbol": "HD",
+    "name": "The Home Depot, Inc."
+  },
+  {
+    "symbol": "NFLX",
+    "name": "Netflix Inc."
+  },
+  {
+    "symbol": "IBM",
+    "name": "International Business Machines Corp"
+  },
+  {
+    "symbol": "BA",
+    "name": "Boeing Company"
+  },
+  {
+    "symbol": "XOM",
+    "name": "Exxon Mobil Corporation"
+  },
+  {
+    "symbol": "WMT",
+    "name": "Walmart Inc"
+  },
+  {
+    "symbol": "MA",
+    "name": "Mastercard Incorporated - Class A"
+  },
+  {
+    "symbol": "GS",
+    "name": "The Goldman Sachs Group, Inc"
+  },
+  {
+    "symbol": "MRK",
+    "name": "Merck & Co Inc"
+  },
+  {
+    "symbol": "CVX",
+    "name": "Chevron Corp"
+  },
+  {
+    "symbol": "ORCL",
+    "name": "Oracle Corp"
+  },
+  {
+    "symbol": "T",
+    "name": "AT&T Inc"
+  },
+  {
+    "symbol": "KO",
+    "name": "Coca-Cola Company"
+  },
+  {
+    "symbol": "CMCSA",
+    "name": "Comcast Corp"
+  },
+  {
+    "symbol": "PM",
+    "name": "Philip Morris International Inc"
+  },
+  {
+    "symbol": "PEP",
+    "name": "PepsiCo, Inc"
+  },
+  {
+    "symbol": "IBM",
+    "name": "International Business Machines Corporation"
+  },
+  {
+    "symbol": "MS",
+    "name": "Morgan Stanley"
+  },
+  {
+    "symbol": "UPS",
+    "name": "United Parcel Service Inc - Class B"
+  },
+  {
+    "symbol": "MMM",
+    "name": "3M Company"
+  },
+  {
+    "symbol": "WFC",
+    "name": "Wells Fargo & Co."
+  },
+  {
+    "symbol": "CAT",
+    "name": "Caterpillar Inc."
+  },
+  {
+    "symbol": "GE",
+    "name": "General Electric Company"
+  },
+  {
+    "symbol": "ADBE",
+    "name": "Adobe Inc."
+  },
+  {
+    "symbol": "AMGN",
+    "name": "Amgen Inc."
+  },
+  {
+    "symbol": "TXN",
+    "name": "Texas Instruments Incorporated"
+  },
+  {
+    "symbol": "MCD",
+    "name": "McDonald's Corporation"
+  },
+  {
+    "symbol": "HON",
+    "name": "Honeywell International Inc."
+  },
+  {
+    "symbol": "UNH",
+    "name": "UnitedHealth Group Incorporated"
+  },
+  {
+    "symbol": "BA",
+    "name": "The Boeing Company"
+  },
+  {
+    "symbol": "SPY",
+    "name": "SPDR S&P 500 ETF Trust"
+  },
+  {
+    "symbol": "ILMN",
+    "name": "Illumina Inc."
+  },
+  {
+    "symbol": "GILD",
+    "name": "Gilead Sciences, Inc."
+  }
+]

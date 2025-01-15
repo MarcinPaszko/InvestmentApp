@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Stocks</title>
+</head>
+<body>
+    <h1>User Stocks</h1>
+
+    {% if user_stocks %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Asset</th>
+                    <th>Number of Shares</th>
+                    <th>Purchase Price</th>
+                    <th>Closing Prices</th>
+                    <th>Trade Dates</th>
+                    <th>Cost of Investment</th>
+                    <th>Gain/Loss</th>
+                    <th>Currency Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in user_stocks %}
+                    {% for i in stock.closing_prices %}
+                        <tr>
+                            <td>{{ stock.asset }}</td>
+                            <td>{{ stock.num_shares }}</td>
+                            <td>{{ stock.purchase_price }}</td>
+                            <td>{{ i }}</td>
+                            <td>{{ stock.trade_dates|slice:forloop.counter0|last }}</td>
+                            <td class="cost-investment"></td>
+                            <td class="gain-loss"></td>
+                            <td>{{ stock.currency_code }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No stocks found for this user.</p>
+    {% endif %}
+
+    <div>
+    <h2>Generated Arrays</h2>
+    <pre>{{ printed_output }}</pre>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var rows = document.querySelectorAll("tbody tr");
+
+            rows.forEach(function(row) {
+                var closingPrice = parseFloat(row.querySelector("td:nth-child(4)").textContent.trim());
+                var tradeDate = row.querySelector("td:nth-child(5)").textContent.trim();
+                var numShares = parseFloat(row.querySelector("td:nth-child(2)").textContent.trim());
+                var purchasePrice = parseFloat(row.querySelector("td:nth-child(3)").textContent.trim());
+                var costInvestmentCell = row.querySelector(".cost-investment");
+                var gainLossCell = row.querySelector(".gain-loss");
+
+                if (!isNaN(numShares) && !isNaN(purchasePrice) && costInvestmentCell && gainLossCell) {
+                    var costInvestment = purchasePrice * numShares;
+                    var gainLoss = (closingPrice - purchasePrice) * numShares;
+
+                    costInvestmentCell.textContent = costInvestment.toFixed(2);
+                    gainLossCell.textContent = gainLoss.toFixed(2);
+                } else {
+                    costInvestmentCell.textContent = 'N/A';
+                    gainLossCell.textContent = 'N/A';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

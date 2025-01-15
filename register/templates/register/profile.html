@@ -1,0 +1,417 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{% static 'portfolio/images/favicon.png' %}">
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <style>
+        body {
+            background-color: #0d0d0d; /* Set background color */
+            font-family: Arial, sans-serif; /* Set default font */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+
+
+        #user-info {
+            position: fixed; /* Keep the position fixed */
+            top: 100px; /* Adjust the top position */
+            left: 2380px; /* Adjust the left position */
+            z-index: 1001; /* Ensure it's above the top bar */
+            color: white; /* Set text color */
+}
+
+
+
+        /* Styles for the top bar */
+       #top-bar {
+            background-color: #000000;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: Arial, sans-serif; /* Change the font family as desired */
+            position: fixed;
+            top: 100px; /* Adjust top to leave space for the banner */
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        #top-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px; /* Change the font size as desired */
+        }
+
+          header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+
+        /* Styles for the content section */
+        #content {
+            padding: 20px; /* Add padding */
+        }
+
+        table {
+            width: 100%; /* Set table width to 100% */
+            border-collapse: collapse; /* Collapse borders */
+            margin-top: 20px; /* Add margin */
+            color: #ffffg;
+        }
+
+        th, td {
+            padding: 12px; /* Add padding */
+            text-align: left; /* Left-align text */
+            border-bottom: 1px solid #ddd; /* Add bottom border */
+            color: #f2f2f2;
+
+        }
+     td {
+            padding: 12px; /* Add padding */
+            text-align: left; /* Left-align text */
+            border-bottom: 1px solid #ddd; /* Add bottom border */
+            color: #f2f2f2;
+
+        }
+        th {
+            background-color: #ffff; /* Set background color for table header */
+            color: #000000;
+        }
+
+        .gain {
+            color: green; /* Set color for gain */
+        }
+
+        .loss {
+            color: red; /* Set color for loss */
+        }
+
+        .gauge-container {
+            display: flex; /* Use flexbox */
+            flex-wrap: wrap; /* Wrap items */
+            margin-top: 20px; /* Add margin */
+        }
+
+        .gauge {
+            width: calc(100% / 10); /* Adjust width */
+            padding: 20px; /* Add padding */
+            margin-right: 10px; /* Add margin */
+            margin-bottom: 10px; /* Add margin */
+            position: relative; /* Set position */
+            text-align: center; /* Center-align text */
+        }
+
+        .gauge svg {
+            width: 150px; /* Set width */
+            height: 150px; /* Set height */
+            overflow: visible; /* Ensure visibility */
+        }
+
+        .circle-background {
+            fill: none; /* No fill */
+            stroke: #000000; /* Set color */
+            stroke-width: 10; /* Set stroke width */
+        }
+
+        .circle-progress {
+            fill: none; /* No fill */
+            stroke: #2b298f; /* Set color */
+            stroke-width: 10; /* Set stroke width */
+            stroke-linecap: round; /* Set linecap */
+            transform-origin: center; /* Set transform origin */
+            transform: rotate(-90deg); /* Rotate */
+            transition: stroke-dashoffset 3.5s; /* Add transition */
+        }
+
+        .gauge-value {
+            font-size: 18px; /* Set font size */
+            font-weight: bold; /* Set font weight */
+            position: absolute; /* Set position */
+            top: 50%; /* Set top */
+            left: 50%; /* Set left */
+            transform: translate(-50%, -50%); /* Translate */
+            color: #fff;
+        }
+
+        #bottom-bar {
+            background-color: #333; /* Set background color */
+            color: white; /* Set text color */
+            padding: 10px 0; /* Add padding */
+            text-align: center; /* Center-align text */
+            position: fixed; /* Set position */
+            bottom: 0; /* Align to bottom */
+            left: 0; /* Align to left */
+            width: 100%; /* Set width to 100% */
+            z-index: 1000; /* Set z-index */
+        }
+
+        footer a {
+            color: white; /* Set link color */
+            text-decoration: none; /* Remove underline */
+            margin: 0 10px; /* Add margin */
+            font-size: 16px; /* Set font size */
+        }
+
+        footer a:hover {
+            background-color: #555; /* Change background color on hover */
+        }
+         .gauge-percentage {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="{% static 'portfolio/images/banner.png' %}" alt="Banner" style="width: 2800px; max-width: 100%; height: auto;">
+</header>
+<!-- Top menu -->
+<div id="top-bar">
+        <div>
+            <a href="{% url 'post_list' %}">Home</a>
+            <a href="{% url 'database' %}">Database</a>
+            <a href="{% url 'register:login' %}">Login</a>
+            <a href="{% url 'register:register' %}">Register</a>
+            <a href="{% url 'register:stock_add' %}">Stock Add</a>
+            <a href="{% url 'register:exchangerates' %}">Exchange Rates</a>
+            <a href="{% url 'register:profile' %}">Profile</a>
+            <a href="{% url 'register:display_data' %}">Arrays</a>
+            <a href="{% url 'register:stock_graph' %}">Graph</a>
+            <!-- Add more links as needed -->
+        </div>
+        <div id="user-info">
+            {% if user.is_authenticated %}
+                Logged as <a href="{% url 'register:profile' %}">{{ user.username }}</a>
+            {% else %}
+                Not Logged
+            {% endif %}
+        </div>
+    </div>
+
+<!-- Banner -->
+
+
+<!-- Content section -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="content">
+    {% if user.is_authenticated %}
+        <h2 style="color: white;">Your Profile</h2>
+        <p  style="color: white;">Welcome, {{ user.username }}!</p>
+
+
+
+        <!-- Display the stock ownership information -->
+        <table>
+            <thead>
+            <tr>
+                <th>Asset</th>
+                <th>Trade Date</th>
+                <th>Number of Shares</th>
+                <th>Purchase Price</th>
+                <th>Currency Code</th>
+                <th>Cost of Investment</th>
+                <th>Latest Closing Price</th>
+                <th>Current Market Value</th>
+                <th>Gain/Loss</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for stock in stock_list %}
+                <tr class="stock-row" data-asset="{{ stock.asset }}">
+                    <td>{{ stock.asset }}</td>
+                    <td>{{ stock.trade_date }}</td>
+                    <td class="num-shares">{{ stock.num_shares }}</td>
+                    <td class="purchase-price" data-currency-code="{{ stock.currency_code }}">{{ stock.purchase_price }}</td>
+                    <td class="currency-code">{{ stock.currency_code }}</td>
+                    <td class="cost-of-investment"></td>
+                    <td class="latest-closing-price">{{ stock.latest_closing_price }}</td>
+                    <td class="current-market-value"></td>
+                    <td class="gain-loss">{{ stock.gain_loss }}</td>
+                    <td class="gauge-percentage"></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Add the gauge section -->
+        <h2  style="color: white;">Gauges</h2>
+        <div class="gauge-container">
+            {% for stock in stock_list %}
+                <div class="gauge">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="circle-background" cx="50" cy="50" r="40"></circle>
+                        <circle class="circle-progress" cx="50" cy="50" r="40" stroke-dasharray="0 251"></circle>
+                    </svg>
+                    <div class="gauge-value">{{ stock.gain_loss }}</div>
+                    <div class="gauge-percentage"></div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Add the graph section -->
+        <h2  style="color: white;">Stock Prices</h2>
+        <h4><a href="/register/graph" target="_blank"  style="color: white;">Open Graph in full screen</a></h4>
+        <div style="display: flex; justify-content: center;">
+            <iframe src="/register/graph/" style="width: 80%; height: 800px;"></iframe>
+        </div>
+
+    {% else %}
+        <p  style="color: white;">You need to <a href="{% url 'login' %}">log in</a> to view your profile.</p>
+    {% endif %}
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Bottom bar -->
+<footer id="bottom-bar">
+    <p>Copyright &copy; Investment Manager Portfolio 2024</p>
+</footer>
+
+<!-- Script section -->
+<script>
+    document.addEventListener('DOMContentLoaded', async function () {
+        var stockRows = document.querySelectorAll('.stock-row');
+
+        try {
+            // Fetch the currencies.json file asynchronously
+            const response = await fetch('/static/register/currencies.json');  // Adjust the path based on the location
+            const data = await response.json();
+            var currencies = data.currencies; // Assuming 'currencies' is the key in your JSON
+            var gaugeData = []; // Array to store gauge percentage data
+
+            stockRows.forEach(function (stockRow) {
+                try {
+                    var numShares = parseInt(stockRow.querySelector('.num-shares').textContent);
+                    var purchasePriceRaw = stockRow.querySelector('.purchase-price').textContent;
+
+                    // Extract the numerical value using a regular expression
+                    var purchasePrice = parseFloat(purchasePriceRaw.replace(/[^\d.]/g, ''));
+
+                    // Extract the currency code from the data attribute
+                    var currencyCode = stockRow.querySelector('.purchase-price').getAttribute('data-currency-code');
+
+                    // Find the currency object based on the currency code
+                    var currencyObject = currencies.find(c => c.currency_code === currencyCode);
+
+                    // Fetch the appropriate currency symbol based on the currency code
+                    var currencySymbol = currencyObject ? currencyObject.symbol : '';
+
+                    var costOfInvestment = numShares * purchasePrice;
+
+                    // Log the latest_closing_price
+                    console.log('latestClosingPrice:', stockRow.querySelector('.latest-closing-price').textContent);
+
+                    // Update the latest-closing-price directly
+                    var latestClosingPriceElement = stockRow.querySelector('.latest-closing-price');
+                    latestClosingPriceElement.textContent = currencySymbol + latestClosingPriceElement.textContent.trim() || 'N/A';
+
+                    stockRow.querySelector('.purchase-price').textContent = currencySymbol + purchasePrice.toFixed(2);
+                    stockRow.querySelector('.cost-of-investment').textContent = currencySymbol + costOfInvestment.toFixed(2);
+
+                    // Update the current-market-value and gain-loss
+                    var currentMarketValueElement = stockRow.querySelector('.current-market-value');
+                    var gainLossElement = stockRow.querySelector('.gain-loss');
+                    var gaugePercentageElement = stockRow.querySelector('.gauge-percentage');
+
+
+                    if (stockRow.querySelector('.latest-closing-price').textContent.trim() !== 'N/A') {
+                        var latestClosingPrice = parseFloat(stockRow.querySelector('.latest-closing-price').textContent.replace(/[^\d.]/g, ''));
+                        var currentMarketValue = numShares * latestClosingPrice;
+                        var gainLossValue = currentMarketValue - costOfInvestment;
+
+                        currentMarketValueElement.textContent = currencySymbol + currentMarketValue.toFixed(2);
+                        gainLossElement.textContent = currencySymbol + gainLossValue.toFixed(2);
+                        console.log('Current Market Value:', currentMarketValueElement.textContent);
+
+                        // Calculate percentage dynamically
+                        var percentage = (currentMarketValue * 100) / costOfInvestment;
+                        console.log('Percentage for gauge:', percentage);
+
+                        // Add gauge percentage data to array
+                        gaugeData.push({
+                            assetCode: stockRow.dataset.asset,
+                            gaugePercentage: percentage.toFixed(2)
+                        });
+
+                        // Add a CSS class based on gain/loss value
+                        if (gainLossValue > 0) {
+                            gainLossElement.classList.add('gain');
+                        } else if (gainLossValue < 0) {
+                            gainLossElement.classList.add('loss');
+                        }
+
+                        // Calculate gauge percentage dynamically
+                        var circle = stockRow.querySelector('.circle-progress');
+                        var radius = parseInt(circle.getAttribute('r'));
+                        var circumference = 2 * Math.PI * radius;
+                        var offset = circumference - (percentage / 100) * circumference;
+                        circle.style.strokeDasharray = `${circumference} ${circumference}`;
+                        circle.style.strokeDashoffset = offset;
+
+                        // Generate and apply random color to the gauge
+                        var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16); // Generates random hex color
+                        circle.style.stroke = randomColor;
+                    } else {
+                        currentMarketValueElement.textContent = 'N/A';
+                        gainLossElement.textContent = 'N/A';
+                        gaugePercentageElement.textContent = 'N/A';
+                    }
+                } catch (error) {
+                    console.error('Error processing stock row:', error);
+                }
+            });
+
+            // Convert gauge data to JSON format
+            var gaugeJsonData = JSON.stringify(gaugeData);
+
+            // Pass gauge JSON data to your gauge rendering logic
+            renderGauge(gaugeJsonData);
+        } catch (error) {
+            console.error('Error fetching currencies.json:', error);
+        }
+    });
+
+    // Function to render the gauge using JSON data
+    function renderGauge(gaugeJsonData) {
+        var gaugeData = JSON.parse(gaugeJsonData);
+        var gaugeContainers = document.querySelectorAll('.gauge');
+
+        gaugeContainers.forEach(function (container, index) {
+            var assetCode = gaugeData[index].assetCode;
+            var gaugePercentage = gaugeData[index].gaugePercentage;
+            var circle = container.querySelector('.circle-progress');
+            var radius = parseInt(circle.getAttribute('r'));
+            var circumference = 2 * Math.PI * radius;
+            var offset = circumference - (gaugePercentage / 100) * circumference;
+            circle.style.strokeDasharray = `${circumference} ${circumference}`;
+            circle.style.strokeDashoffset = offset;
+            container.querySelector('.gauge-percentage').textContent = assetCode;
+        });
+    }
+</script>
+
+</body>
+</html>

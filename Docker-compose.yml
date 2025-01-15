@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  django-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - ./portfolio/stock_data:/app/stock_data
+    depends_on:
+      - mongo-db
+
+  node-app:
+    build:
+      context: ./portfolio
+      dockerfile: Dockerfile-node
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./portfolio:/app
+    depends_on:
+      - mongo-db
+
+  mongo-db:
+    image: mongo:7.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./stock_data/data/db:/data/db

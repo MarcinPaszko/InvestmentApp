@@ -1,0 +1,31 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{% static 'portfolio/images/favicon.png' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Site{% endblock %}</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Your Site Header</h1>
+        <!-- Add any common header content here -->
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2111124 Your Site. All rights reserved.</p>
+        <!-- Add any common footer content here -->
+    </footer>
+
+</body>
+</html>

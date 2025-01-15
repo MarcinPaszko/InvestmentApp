@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investment Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Style for the top bar */
+        #top-bar {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #top-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        #user-info {
+            color: white;
+        }
+
+        /* Add more styles as needed */
+
+        /* Style for the scrolling stock ticker */
+        #ticker {
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+            color: #333;
+            font-size: 18px;
+            margin-top: 20px; /* Adjust spacing as needed */
+        }
+
+        #ticker p {
+            display: inline-block;
+            margin-right: 20px; /* Adjust spacing as needed */
+            animation: scrollTicker 10s linear infinite;
+        }
+
+        @keyframes scrollTicker {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top bar with links -->
+    <div id="top-bar">
+        <div>
+            <a href="{% url 'post_list' %}">Home</a>
+            <a href="{% url 'database' %}">Database</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register:register' %}">Register</a>
+            <a href="{% url 'register:stock_add' %}">Stock Add</a>
+            <a href="{% url 'register:exchangerates' %}">Exchange Rates</a>
+            <a href="{% url 'register:profile' %}">Profile</a>
+            <!-- Add more links as needed -->
+        </div>
+        <div id="user-info">
+            {% if user.is_authenticated %}
+                Logged as {{ user.username }}
+            {% else %}
+                Not Logged
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Scrolling stock ticker -->
+    <div id="ticker">
+        {% if stock_list %}
+            {% for stock in stock_list %}
+                <p>{{ stock.name }}: {{ stock.closing_price }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <strong>Elo mordziunia</strong>
+
+</body>
+</html>

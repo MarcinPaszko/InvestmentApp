@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{% static 'portfolio/images/favicon.png' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Prices</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        body {
+            background-color: #0d0d0d; /* Set background color */
+        }
+
+
+    </style>
+</head>
+<body>
+    <div style="width:75%;">
+        <canvas id="stockChart"></canvas>
+    </div>
+
+    <script>
+        // Parse the JSON data passed from the view
+        var userStocks = JSON.parse('{{ json_stock_data | escapejs }}').user_stocks;
+
+        // Prepare datasets for the chart
+        var datasets = userStocks.map(function(stock) {
+            return {
+                label: stock.asset,
+                data: stock.closing_prices,
+                borderColor: getRandomColor(), // Function to generate random color
+            };
+        });
+
+        var ctx = document.getElementById('stockChart').getContext('2d');
+
+        var stockChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: userStocks[0].trade_dates, // Assuming all stocks have the same trade dates
+                datasets: datasets
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Function to generate random color
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>

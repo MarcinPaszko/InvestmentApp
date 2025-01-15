@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{% static 'portfolio/images/favicon.png' %}">
+    <meta charset="UTF-8">
+    <title>Stock Details</title>
+</head>
+<body>
+    <h1>Stock Details</h1>
+
+    <ul>
+        {% for key, value in stock_data.items %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

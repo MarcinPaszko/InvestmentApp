@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    {% csrf_token %}
+</head>
+<body>
+    <h1>Chat</h1>
+    <form id="chatForm" method="post" action="{% url 'analyze_text' %}">
+        {% csrf_token %}
+        <textarea name="text" rows="4" cols="50"></textarea>
+        <button type="submit">Analyze Text</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('chatForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var form = this;
+            var formData = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                var resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '';
+                if (data.entities && data.entities.length > 0) {
+                    data.entities.forEach(entity => {
+                        var p = document.createElement('p');
+                        p.textContent = `${entity.text} - ${entity.label}`;
+                        resultDiv.appendChild(p);
+                    });
+                } else {
+                    var p = document.createElement('p');
+                    p.textContent = 'No entities identified';
+                    resultDiv.appendChild(p);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
