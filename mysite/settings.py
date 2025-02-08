@@ -1,8 +1,3 @@
-#users:
-#tomek Tomek12345!
-#marcin Marcin12345!
-#andrzej Jarmark12345!
-# app name : portfolio
 
 
 
@@ -21,12 +16,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=p=21v*-_ax0st9k=z=6=pb&7)f41pegok55ycqnjk#n%m07yf'
+SECRET_KEY = 'XXX'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
-#added 0.0.0.0. for linux
 ALLOWED_HOSTS = ['localhost', '127.0.0.1','0.0.0.0']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
