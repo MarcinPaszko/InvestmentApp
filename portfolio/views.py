@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 
 def post_list(request):
-        finnhub_client = finnhub.Client(api_key="cmnqpqhr01qs0nh7qfa0cmnqpqhr01qs0nh7qfag")
+        finnhub_client = finnhub.Client(api_key="xxx")
         investment_news = finnhub_client.general_news('general', min_id=0)
 
         # return render(request, 'portfolio/post_list.html', {})
